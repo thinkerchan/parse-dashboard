@@ -7,7 +7,7 @@
  */
 import * as Filters from 'lib/Filters';
 import { List, Map } from 'immutable';
-import { dateStringUTC } from 'lib/DateUtils';
+import { dateStringUTC2 } from 'lib/DateUtils';
 import getFileName from 'lib/getFileName';
 import Parse from 'parse';
 import Pill from 'components/Pill/Pill.react';
@@ -152,7 +152,7 @@ export default class BrowserCell extends Component {
       } else if (typeof value === 'string') {
         this.props.value = new Date(this.props.value);
       }
-      this.copyableValue = content = dateStringUTC(this.props.value);
+      this.copyableValue = content = dateStringUTC2(this.props.value);
     } else if (this.props.type === 'Boolean') {
       this.copyableValue = content = this.props.value ? 'True' : 'False';
     } else if (this.props.type === 'Object' || this.props.type === 'Bytes') {

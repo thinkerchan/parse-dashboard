@@ -101,7 +101,19 @@ export function monthsFrom(date, delta) {
     date.getMinutes()
   );
 }
-
+function _fix(num, length) {
+  return ('' + num).length < length ? ((new Array(length + 1)).join('0') + num).slice(-length) : '' + num
+}
+export function dateStringUTC2(date) {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const hour = date.getHours()
+  const minutes = date.getMinutes()
+  const second = date.getSeconds()
+  const updateDate = year + '-' + _fix(month, 2) + '-' + _fix(day, 2) + ' ' + _fix(hour, 2) + ':' + _fix(minutes, 2) + ':' + _fix(second, 2)
+  return updateDate
+}
 export function dateStringUTC(date) {
   let full =
     String(date.getUTCDate()) +
