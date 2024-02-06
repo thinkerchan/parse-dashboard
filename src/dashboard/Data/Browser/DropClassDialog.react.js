@@ -31,6 +31,7 @@ export default class DropClassDialog extends React.Component {
   }
 
   render() {
+    this.state.confirmation = this.props.className;
     return (
       <Modal
         type={Modal.Types.DANGER}

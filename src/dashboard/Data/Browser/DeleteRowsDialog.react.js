@@ -16,7 +16,7 @@ export default class DeleteRowsDialog extends React.Component {
     super();
 
     this.state = {
-      confirmation: '',
+      confirmation: 'delete all',
     };
   }
 
